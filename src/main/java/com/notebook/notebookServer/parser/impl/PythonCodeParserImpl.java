@@ -30,7 +30,7 @@ public class PythonCodeParserImpl implements CodeParser {
 	public String parseVariableName(final String t) 
 	{
 		StringBuilder stb = new StringBuilder(t);
-		int from = stb.indexOf(INTERPRETER_NAME)+INTERPRETER_NAME.length();
+		int from = stb.indexOf(INTERPRETER_NAME)+INTERPRETER_NAME.length()+1;
 		int to = stb.indexOf("=");
 		return stb.substring(from, to);
 	}
@@ -47,7 +47,7 @@ public class PythonCodeParserImpl implements CodeParser {
 	public String parseCodeExpression(final String t)
 	{
 		StringBuilder stb = new StringBuilder(t);
-		int from = stb.indexOf(INTERPRETER_NAME)+INTERPRETER_NAME.length();
+		int from = stb.indexOf(INTERPRETER_NAME)+INTERPRETER_NAME.length()+1;
 		return stb.substring(from);
 	}
 
